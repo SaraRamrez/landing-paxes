@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Calendario de Adviento 🎄</title>
+</head>
+<body>
+    <header>
+        <h1>Calendario de Adviento</h1>
+        <p>24 días de abrir cajas de mentira. ¡Disfrutalas!</p>
+    </header>
+
+    <main>
+        <!-- Aquí el JS pintará las 24 cajas -->
+        <section id="calendarGrid" class="calendar-grid">
+        </section>
+
+        <!-- Ventana emergente (Modal) -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeBtn">&times;</span>
+                <h2 id="modalTitle">Título del día</h2>
+                <div id="modalBody">
+                    <!-- Aquí dentro irá la foto, texto o vídeo -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

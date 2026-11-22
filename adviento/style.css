@@ -1,0 +1,202 @@
+/* Reseteo básico y colores generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a; /* Fondo oscuro elegante estilo gamer/nocturno */
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    overflow-x: hidden; /* Evita scroll horizontal en móviles */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.2rem;
+}
+
+header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #34d399 0%, #fde68a 48%, #f87171 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    animation: lucesNavidad 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes lucesNavidad {
+    0% {
+        filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.35))
+                drop-shadow(0 0 18px rgba(248, 113, 113, 0.15));
+    }
+    50% {
+        filter: drop-shadow(0 0 14px rgba(253, 230, 138, 0.55))
+                drop-shadow(0 0 24px rgba(52, 211, 153, 0.35));
+    }
+    100% {
+        filter: drop-shadow(0 0 10px rgba(248, 113, 113, 0.45))
+                drop-shadow(0 0 22px rgba(253, 230, 138, 0.3));
+    }
+}
+
+header p {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+}
+
+/* La Cuadrícula (Grid) del Calendario */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.9rem;
+        overflow-x: hidden;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .calendar-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+    }
+
+    .calendar-card {
+        aspect-ratio: 1 / 1;
+        height: auto;
+        padding: 0.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calendar-card .day-number {
+        font-size: 1.15rem;
+    }
+
+    .status {
+        font-size: 0.65rem;
+    }
+}
+
+/* Estilo base para cada cajita del día */
+.calendar-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calendar-card .day-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Estados de las tarjetas (Bloqueada / Desbloqueada) */
+.calendar-card.locked {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.calendar-card.unlocked {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.58), rgba(220, 38, 38, 0.36));
+    border-color: #f87171;
+    color: #ffffff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.calendar-card.unlocked:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(248, 113, 113, 0.72), rgba(239, 68, 68, 0.45));
+    border-color: #fde68a;
+    box-shadow: 0 10px 24px -8px rgba(239, 68, 68, 0.55),
+                0 0 16px rgba(253, 230, 138, 0.25);
+}
+
+.status {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    opacity: 0.8;
+}
+
+/* Estilos del Modal (Ventana Emergente) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 650px; /* Un poquito más ancho para vales apaisados */
+    max-height: 90vh; /* Que nunca pase del alto de la pantalla */
+    overflow-y: auto; /* Si algo es muy alto, permite hacer scroll dentro del modal */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #6ee7b7;
+}
+
+#modalTitle {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 500;
+    color: #6ee7b7;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid rgba(248, 113, 113, 0.35);
+    padding-bottom: 0.55rem;
+    margin-bottom: 1rem;
+}
+
+#modalBody {
+    color: #cbd5e1;
+    line-height: 1.5;
+}
