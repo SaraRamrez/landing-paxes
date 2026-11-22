@@ -73,13 +73,14 @@ header p {
     }
 
     .calendar-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.6rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.65rem;
     }
 
     .calendar-card {
         aspect-ratio: 1 / 1;
         height: auto;
+        min-width: 0;
         padding: 0.25rem;
         display: flex;
         flex-direction: column;
