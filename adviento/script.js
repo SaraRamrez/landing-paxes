@@ -64,7 +64,7 @@ const calendarSurprises = [
         content: `
         <div style="
             background: rgba(255, 255, 255, 0.04);
-            border-left: 3px solid #ec4899;
+            border-left: 3px solid #d33434;
             border-radius: 10px;
             padding: 1.25rem 1rem;
             margin-top: 0.75rem;
@@ -160,7 +160,7 @@ const calendarSurprises = [
         content: `
         <div style="
             background: rgba(255, 255, 255, 0.04);
-            border-left: 3px solid #ec4899;
+            border-left: 3px solid #d33434;
             border-radius: 10px;
             padding: 1.25rem 1rem;
             margin-top: 0.75rem;
@@ -195,7 +195,7 @@ const calendarSurprises = [
         content: `
         <div style="
             background: rgba(255, 255, 255, 0.04);
-            border-left: 3px solid #ec4899;
+            border-left: 3px solid #d33434;
             border-radius: 10px;
             padding: 1.25rem 1rem;
             margin-top: 0.75rem;
@@ -255,7 +255,7 @@ const calendarSurprises = [
         content: `
         <div style="
             background: rgba(255, 255, 255, 0.04);
-            border-left: 3px solid #ec4899;
+            border-left: 3px solid #d33434;
             border-radius: 10px;
             padding: 1.25rem 1rem;
             margin-top: 0.75rem;
@@ -338,7 +338,7 @@ const calendarSurprises = [
         content: `
         <div style="
             background: rgba(255, 255, 255, 0.04);
-            border-left: 3px solid #ec4899;
+            border-left: 3px solid #d33434;
             border-radius: 10px;
             padding: 1.25rem 1rem;
             margin-top: 0.75rem;
@@ -379,7 +379,7 @@ const calendarSurprises = [
         ></iframe>
         <div style="
             background: rgba(255, 255, 255, 0.04);
-            border-left: 3px solid #ec4899;
+            border-left: 3px solid #d33434;
             border-radius: 10px;
             padding: 1.25rem 1rem;
             margin-top: 0.75rem;
