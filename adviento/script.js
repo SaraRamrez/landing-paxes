@@ -455,7 +455,7 @@ for (let i = 1; i <=24; i++) {
         `;
 
         card.addEventListener("click", () => {
-            showLockedToast(`¡No seas impaciente! 🤭 El día ${i} se abre el ${i} de diciembre.`);
+            showLockedToast(`¡No seas impaciente! 🤭 Esta casilla se desbloquea el ${i} de diciembre.`);
         });
     }
 
