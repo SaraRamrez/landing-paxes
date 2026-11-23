@@ -447,7 +447,7 @@ for (let i = 1; i <=24; i++) {
             }
         });
 
-    } else {
+} else {
         card.classList.add("locked");
         card.innerHTML = `
             <span class="day-number">${i}</span>
@@ -455,7 +455,7 @@ for (let i = 1; i <=24; i++) {
         `;
 
         card.addEventListener("click", () => {
-            alert("¡No seas impaciente! 🤭");
+            showLockedToast(`¡No seas impaciente! 🤭 El día ${i} se abre el ${i} de diciembre.`);
         });
     }
 
@@ -524,4 +524,26 @@ function setupDay17Minigame() {
         spawnStar();
         gameInterval = setInterval(spawnStar, 1100);
     });
+}
+
+let toastTimeout = null;
+
+function showLockedToast(message) {
+    let toast = document.getElementById("lockedToast");
+
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "lockedToast";
+        document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.remove("show");
+    void toast.offsetWidth; // Reinicia la animación si se pulsa otra casilla rápido
+    toast.classList.add("show");
+
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2400);
 }

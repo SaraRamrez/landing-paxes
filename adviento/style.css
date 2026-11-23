@@ -201,3 +201,32 @@ header p {
     color: #cbd5e1;
     line-height: 1.5;
 }
+
+#lockedToast {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate3d(-50%, calc(-50% + 16px), 0);
+    background: rgba(15, 23, 42, 0.94);
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    width: fit-content;
+    max-width: calc(100vw - 2rem);
+    text-align: center;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#lockedToast.show {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+}
