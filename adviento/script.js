@@ -415,8 +415,8 @@ for (let i = 1; i <=24; i++) {
     card.classList.add("calendar-card");
     
     // Comprobamos si la tarjeta debe estar desbloqueada o bloqueada
-    const isUnlocked = true 
-    // const isUnlocked = (currentMonth === DECEMBER_MONTH && currentDay >= i);
+    // const isUnlocked = true 
+    const isUnlocked = (currentMonth === DECEMBER_MONTH && currentDay >= i);
 
     // Agregamos la clase y el contenido a la tarjeta según corresponda
     if (isUnlocked) {
